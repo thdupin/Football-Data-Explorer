@@ -43,8 +43,8 @@ Analyse du taux de victoire par système de jeu (ex : 4-3-3, 3-5-2...).
 1. **Cloner le projet** :
 
 ```bash
-git clone https://github.com/ton_pseudo/football-data-explorer.git
-cd football-data-explorer
+git clone https://github.com/thdupin/Football-Data-Explorer.git
+cd Football-Data-Explorer
 ```
 
 2. **Créer un environnement virtuel (recommandé)** :
