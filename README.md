@@ -7,13 +7,23 @@ Bienvenue dans **Football Data Explorer**, une application interactive développ
 L'application est organisée par onglets et propose les analyses suivantes :
 
 ### ⚽️ 4.1 - Clubs
-Explore les informations clés des clubs présents dans la base.
+Explore les informations clés des clubs présents dans la base :
+- Afficher la liste complète des clubs (idteam et nom)
+- Quel est le nom du club avec l’ID 43 ?
+- Nombre total de clubs présents dans la base
 
-### 🧍‍♂️ 4.2 - Joueurs
-Analyse les caractéristiques des joueurs (âge, taille, poste...).
+### 🧍🧍‍♂️ 4.2 - Joueurs
+Analyse des caractéristiques des joueurs :
+- Afficher la liste complète des joueurs
+- Nombre total de joueurs dans la base
 
 ### 📅 4.3 - Matchs
-Affiche les détails de chaque match : date, score, clubs, etc.
+Détails des matchs joués :
+- Afficher la liste des matchs
+- Afficher tous les ID des matchs où Arsenal est le club à domicile
+- Afficher les informations des matchs joués le 11-08-2019
+- Nombre total de matchs joués en 2019
+- Nombre de matchs joués par le club Liverpool
 
 ### 📈 5.1 - Résultats en fonction du club
 Afficher le nombre de matchs par club pour le championnat 5 (Série A) saison 2019-2020 (victoires, défaites, matchs nuls).
