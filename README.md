@@ -84,7 +84,8 @@ pip install -r requirements.txt
 
 # ▶️ Lancer l'application
 ```bash
-streamlit run app.py
+cd /scripts
+streamlit run all_scripts.py
 ```
 
 # 🧠 Données utilisées
