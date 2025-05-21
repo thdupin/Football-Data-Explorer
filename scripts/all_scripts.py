@@ -699,10 +699,6 @@ with tabs[6]:
         # 5.3 Evolution des écarts de résultats des clubs Liverpool et Arsenal
         st.subheader("Évolution interactive des écarts de résultats : Liverpool vs Arsenal")
 
-        # 1. Charger les données
-        matches_df = pd.read_csv('./csv_output/matches.csv', parse_dates=['date'])
-        teams_df = pd.read_csv('./csv_output/teams.csv')
-
         # 2. Trouver les IDs de Liverpool et Arsenal
         liverpool_id = teams_df[teams_df['name'].str.contains("Liverpool", case=False, na=False)]['idteam'].iloc[0]
         arsenal_id = teams_df[teams_df['name'].str.contains("Arsenal", case=False, na=False)]['idteam'].iloc[0]
