@@ -13,6 +13,7 @@ matches = []
 highlights = []
 substitutions = []
 match_players = []
+transfers = []
 
 # Pour éviter les doublons
 seen_teams = set()
@@ -31,7 +32,7 @@ def is_goal_valid(goal_event):
     return goal_event.get('type') != 'var'
 
 def parse_json_files(json_directory):
-    teams, players, matches, highlights, substitutions, match_players = [], [], [], [], [], []
+    teams, players, matches, highlights, substitutions, match_players, transfers = [], [], [], [], [], [], []
     seen_teams, seen_players = set(), set()
 
 
