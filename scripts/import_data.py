@@ -257,7 +257,6 @@ def load_data(json_directory='../data', force_refresh=False):
         transfers_df = pd.read_csv(csv_paths[6])
         print("✅ Données chargées depuis les CSV.")
     else:
-        teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df, transfers_df = parse_json_files(
-            json_directory)
+        teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df, transfers_df = parse_json_files(json_directory)
 
     return teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df, transfers_df
