@@ -728,6 +728,7 @@ with tabs[6]:
 
         # 5. Fusionner les deux
         df_combined = pd.concat([liverpool_data, arsenal_data])
+        df_combined = df_combined.sort_values(by=['club', 'date'])
 
         # 6. Tracer avec Plotly
         fig = px.line(
