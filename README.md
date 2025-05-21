@@ -115,5 +115,11 @@ Voici les principales librairies utilisées :
 
 Voir ```requirements.txt``` pour plus de détails.
 
+# 🌐 Déploiement en ligne
+L’application Football Data Explorer est également déployée et accessible directement depuis votre navigateur à l’adresse suivante :
+https://thdupin-football-data-explorer.streamlit.app
+
+Vous pouvez ainsi explorer les données et analyses sans installation locale, en bénéficiant d’une interface interactive et réactive.
+
 # 👨‍💻 Auteur
 Développé par Théo DUPIN.
