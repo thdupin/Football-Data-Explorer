@@ -6,6 +6,10 @@ Bienvenue dans **Football Data Explorer**, une application interactive développ
 
 L'application est organisée par onglets et propose les analyses suivantes :
 
+### ⬆️ Upload des données JSON / ZIP
+Avant d'accéder aux analyses, il faut d'abord uploader un fichier data.zip contenant les fichiers JSON nécessaires.
+Une fois les données chargées, elles deviennent disponibles pour consultation et analyse dans les onglets suivants.
+
 ### ⚽️ 4.1 - Clubs
 Explore les informations clés des clubs présents dans la base :
 - Afficher la liste complète des clubs (idteam et nom)
