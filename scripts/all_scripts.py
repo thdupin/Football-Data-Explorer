@@ -59,6 +59,9 @@ with tabs[0]:
                     else:
                         teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df = data
 
+                        matches_df[['home_idteam', 'away_idteam']] = matches_df[['home_idteam', 'away_idteam']].astype('Int64')
+                        teams_df['idteam'] = teams_df['idteam'].astype('Int64')
+
                         st.session_state["data_loaded"] = True  # Marquer que les données sont prêtes
                         st.session_state["teams_df"] = teams_df
                         st.session_state["players_df"] = players_df
