@@ -57,7 +57,7 @@ with tabs[0]:
                     if data is None or any(d is None for d in data):
                         st.error("Erreur: les données n'ont pas pu être chargées.")
                     else:
-                        teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df = data
+                        teams_df, players_df, matches_df, highlights_df, substitutions_df, match_players_df, transfers_df = data
 
                         matches_df[['home_idteam', 'away_idteam']] = matches_df[['home_idteam', 'away_idteam']].astype('Int64')
                         teams_df['idteam'] = teams_df['idteam'].astype('Int64')
