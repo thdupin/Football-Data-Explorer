@@ -1,6 +1,21 @@
 import pandas as pd
 import json
 import os
+import zipfile
+
+ZIP_FILE = '../data.zip'
+EXTRACT_DIR = '../'  # On extrait dans le dossier courant
+
+# Si le dossier ./data/ n'existe pas mais le zip oui
+if not os.path.exists('./data'):
+    if os.path.exists(ZIP_FILE):
+        with zipfile.ZipFile(ZIP_FILE, 'r') as zip_ref:
+            zip_ref.extractall(EXTRACT_DIR)
+            print("✅ Archive extraite")
+    else:
+        raise FileNotFoundError(f"❌ Ni dossier './data' ni fichier '{ZIP_FILE}' trouvés.")
+else:
+    print("📁 Le dossier './data' existe déjà.")
 
 # Directory containing JSON files and output
 json_directory = '../data'

@@ -149,9 +149,7 @@ with tabs[2]:
 with tabs[3]:
     # 5.1 Résultats en fonction du club (championnat 5)
     st.header("📈 5.1 - Résultats en fonction du club (championnat 5)")
-    # Chargement des CSV
-    matches_df = pd.read_csv('./csv_output/matches.csv', parse_dates=['date'])
-    teams_df = pd.read_csv('./csv_output/teams.csv')
+    matches_df['date'] = pd.to_datetime(matches_df['date'])
 
     # Section 1 : Résultats par club – Serie A 2019-2020
     st.subheader("1️⃣ Résultats par club – Serie A 2019-2020")
@@ -287,8 +285,7 @@ with tabs[4]:
     # Fonction de recherche
     @st.cache_data
     def find_player_id(lastname):
-        df = pd.read_csv('./csv_output/players.csv')
-        player = df[df['lastname'].str.lower() == lastname.lower()]  # insensible à la casse
+        player = players_df[players_df['lastname'].str.lower() == lastname.lower()]  # insensible à la casse
         if not player.empty:
             return player['playerid'].values[0]
         else:
@@ -782,13 +779,14 @@ with tabs[6]:
     st.markdown(f"**Chi2** = {chi2:.2f}, **p-value** = {p:.1f}")
     if p < 0.05:
         st.success(
-            "✅ **Corrélation significative détectée.** Le test du Chi2 montre que les distributions de résultats "
-            "(victoire, défaite, nul) diffèrent selon le lieu du match (p < 0.05)."
+            "✅ **Corrélation significative détectée.** On remarque que les résultats (victoire, défaite, nul) "
+            "varient en fonction du lieu du match. Le test du Chi² confirme que cette différence n’est probablement "
+            "pas due au hasard (p < 0.05)."
         )
     else:
         st.info(
-            "ℹ️ **Pas de corrélation significative détectée.** Les variations de résultats "
-            "(victoire, défaite, nul) entre domicile et extérieur peuvent s’expliquer par le hasard (p ≥ 0.05)."
+            "ℹ️ **Pas de corrélation significative détectée.** On ne constate pas de réelle différence entre les résultats "
+            "à domicile ou à l’extérieur. D’après le test du Chi², ces variations semblent être dues au hasard (p ≥ 0.05)."
         )
 
     # Visualisation interactive avec Plotly
@@ -880,6 +878,15 @@ with tabs[7]:
     )
 
     st.plotly_chart(fig, use_container_width=True)
+
+    # Club le plus rentable
+    best_club = top10.iloc[0]['club']
+    best_gain = top10.iloc[0]['gain']
+
+    st.success(
+        f"💰 **Le club le plus rentable est {best_club}** avec un gain net de **{best_gain:.2f}€** "
+        "si on avait misé 1€ sur chacune de ses victoires."
+    )
 
 with tabs[8]:
     # 5.6 Corrélation entre formation et victoire
@@ -985,4 +992,11 @@ with tabs[8]:
     )
 
     st.plotly_chart(fig, use_container_width=True)
+
+    st.info(
+        "ℹ️ Globalement, on remarque que même si certaines formations ont un taux de victoire élevé, "
+        "leur faible nombre de matchs limite la fiabilité de ces observations. \n"
+        "Pour les formations les plus jouées, les taux de victoire varient sans qu’un pattern clair n’émerge vraiment, "
+        "ce qui suggère qu’il n’y a pas de corrélation forte et robuste entre la formation utilisée et la victoire."
+    )
 
